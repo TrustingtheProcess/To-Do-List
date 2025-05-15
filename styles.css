@@ -8,7 +8,7 @@
 .container {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(315deg, #0a51e1, #4fabed);
+  background: linear-gradient(315deg, #02b3ff, #011c2f);
   padding: 10px;
 }
 
@@ -24,7 +24,7 @@
 .todo-app h2 {
   color: #002765;
   display: flex;
-  align-items: center;
+  justify-content: center;
   margin-bottom: 20px;
 }
 
@@ -62,6 +62,29 @@ button {
   border-radius: 40px;
 }
 
+#list-container {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+#list-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+#list-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#list-container::-webkit-scrollbar-thumb {
+  background-color: #ff5945;
+  border-radius: 10px;
+  background-clip: content-box;
+  border: 2px solid transparent;
+  box-shadow: none;
+  outline: none;
+}
+
 ul li {
   list-style: none;
   font-size: 17px;
@@ -72,14 +95,10 @@ ul li {
 }
 
 ul li::before {
-  content: '';
+  content: '\25CB';
   position: absolute;
-  height: 28px;
-  width: 28px;
-  border-radius: 50%;
-  background-image: url(images/uncheck.png);
-  background-size: cover;
-  background-position: center;
+  font-size: 20px;
+  color: green;
   top: 8px;
   left: 8px;
 }
@@ -90,7 +109,7 @@ ul li.checked {
 }
 
 ul li.checked::before {
-  background-image: url(images/check.png);
+  content: '\2714';
 }
 
 ul li span {
